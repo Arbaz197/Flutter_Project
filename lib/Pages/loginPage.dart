@@ -1,5 +1,5 @@
-import 'package:abaadee/homepage.dart';
-import 'package:abaadee/pages.dart';
+import 'package:abaadee/Pages/homepage.dart';
+import 'package:abaadee/Pages/mainpage.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
@@ -19,8 +19,8 @@ class LoginPage extends StatelessWidget {
           children: [
             GestureDetector(
               onTap: () {
-                Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => Pages()));
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => MainPage()));
               },
               child: Text(
                 "Skip",

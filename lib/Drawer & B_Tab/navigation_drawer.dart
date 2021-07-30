@@ -2,8 +2,8 @@
 //import 'package:abaadee/homepage.dart';
 import 'package:abaadee/BottomTabPages/account_page.dart';
 import 'package:abaadee/BottomTabPages/fav_page.dart';
-import 'package:abaadee/loginPage.dart';
-import 'package:abaadee/pages.dart';
+import 'package:abaadee/Pages/loginPage.dart';
+import 'package:abaadee/Pages/mainpage.dart';
 import 'package:flutter/material.dart';
 
 class NavigationDrawer extends StatelessWidget {
@@ -17,10 +17,10 @@ class NavigationDrawer extends StatelessWidget {
           padding: padding,
           children: <Widget>[
             DrawerHeader(
-              child: Image.asset("assets/images/abaadee-logo-black.png"),
+              child: Image.asset("assets/images/abaadee logo white.png"),
               decoration: BoxDecoration(
                   border: Border(
-                      bottom: BorderSide(width: 0.5, color: Colors.black87))),
+                      bottom: BorderSide(width: 0.5, color: Colors.white))),
             ),
             SizedBox(height: 10),
             buildMenuItem(
@@ -50,7 +50,7 @@ class NavigationDrawer extends StatelessWidget {
               height: 3,
             ),
             Divider(
-              color: Colors.black87,
+              color: Colors.white,
             ),
             const SizedBox(
               height: 3,
@@ -81,7 +81,7 @@ class NavigationDrawer extends StatelessWidget {
       required IconData icon,
       // ignore: non_constant_identifier_names
       VoidCallback? OnClicked}) {
-    final color = Colors.black87;
+    final color = Colors.white;
     final hovercolor = Colors.white70;
 
     return ListTile(
@@ -97,7 +97,7 @@ class NavigationDrawer extends StatelessWidget {
     switch (i) {
       case 0:
         Navigator.of(context)
-            .push(MaterialPageRoute(builder: (context) => Pages()));
+            .push(MaterialPageRoute(builder: (context) => MainPage()));
         break;
       case 1:
         Navigator.of(context)
@@ -105,7 +105,7 @@ class NavigationDrawer extends StatelessWidget {
         break;
       case 2:
         Navigator.of(context)
-            .push(MaterialPageRoute(builder: (context) => Pages()));
+            .push(MaterialPageRoute(builder: (context) => MainPage()));
         break;
       case 3:
         Navigator.of(context)
@@ -113,7 +113,7 @@ class NavigationDrawer extends StatelessWidget {
         break;
       case 4:
         Navigator.of(context)
-            .push(MaterialPageRoute(builder: (context) => Pages()));
+            .push(MaterialPageRoute(builder: (context) => MainPage()));
         break;
       case 5:
         Navigator.of(context)

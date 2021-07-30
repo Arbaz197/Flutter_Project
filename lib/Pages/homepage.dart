@@ -10,8 +10,9 @@ class _HomepageState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Padding(
+      body: Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: <
+          Widget>[
+        Padding(
           padding: EdgeInsets.only(
             top: 40,
           ),
@@ -57,7 +58,7 @@ class _HomepageState extends State<HomeScreen> {
             ],
           ),
         ),
-      ),
+      ]),
     );
   }
 }

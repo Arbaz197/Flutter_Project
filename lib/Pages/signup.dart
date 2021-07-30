@@ -1,4 +1,4 @@
-import 'package:abaadee/loginPage.dart';
+import 'package:abaadee/Pages/loginPage.dart';
 import 'package:flutter/material.dart';
 
 class Signup extends StatelessWidget {
