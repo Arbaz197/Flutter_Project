@@ -86,7 +86,6 @@ class _MainPageState extends State<MainPage> {
       ),
       drawer: NavigationDrawer(),
       body: BottomTab(),
-      
     );
   }
 }

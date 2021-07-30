@@ -1,4 +1,5 @@
 import 'package:abaadee/Pages/filter_page.dart';
+import 'package:abaadee/Pages/mainpage.dart';
 import 'package:flutter/material.dart';
 
 class Property extends StatefulWidget {
@@ -126,7 +127,31 @@ class _PropertyState extends State<Property> {
               ],
             ),
             SizedBox(
-              height: 5,
+              height: 18,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "            Popular",
+                  style: TextStyle(fontSize: 15, color: Colors.black),
+                ),
+                Text(
+                  "    Featured",
+                  style: TextStyle(fontSize: 15, color: Colors.black),
+                ),
+                Text(
+                  "Recommended          ",
+                  style: TextStyle(fontSize: 15, color: Colors.black),
+                ),
+              ],
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Divider(
+                height: 10,
+                color: Colors.black45,
+              ),
             ),
             Column(
               children: <Widget>[
@@ -135,7 +160,7 @@ class _PropertyState extends State<Property> {
                     Container(
                       margin:
                           EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                      height: 250,
+                      height: 300,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
                           color: Colors.white,
@@ -151,16 +176,46 @@ class _PropertyState extends State<Property> {
                     Container(
                       margin:
                           EdgeInsets.symmetric(vertical: 20, horizontal: 25),
-                      height: 150,
+                      height: 200,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        color: Colors.grey[700],
+                          borderRadius: BorderRadius.circular(20),
+                          color: Colors.grey[700],
+                          image: DecorationImage(
+                              image: AssetImage(
+                                  'assets/images/abaadee logo white.png'))),
+                    ),
+                    Positioned(
+                      left: 350,
+                      top: 25,
+                      child: CircleAvatar(
+                        backgroundColor: Color(0xfffcb812),
+                        child: Icon(
+                          Icons.favorite_rounded,
+                          color: Colors.white,
+                        ),
                       ),
                     ),
-                    Icon(
-                      Icons.favorite_rounded,
-                      color: Color(0xfffcb812),
-                    )
+                    Positioned(
+                        top: 230,
+                        left: 50,
+                        child: Column(
+                          children: [
+                            Positioned(
+                              child: Text(
+                                "Hello salman gandu",
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 22,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                            Text(
+                              "Hello  gandu",
+                              style:
+                                  TextStyle(color: Colors.black, fontSize: 18),
+                            )
+                          ],
+                        ))
                   ],
                 ),
                 SizedBox(
@@ -171,22 +226,92 @@ class _PropertyState extends State<Property> {
                     Container(
                       margin:
                           EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                      height: 250,
+                      height: 300,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        color: Colors.blueGrey,
-                      ),
+                          borderRadius: BorderRadius.circular(20),
+                          color: Colors.white,
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.withOpacity(0.5),
+                              spreadRadius: 5,
+                              blurRadius: 7,
+                              offset: Offset(0, 3),
+                            ),
+                          ]),
                     ),
                     Container(
                       margin:
                           EdgeInsets.symmetric(vertical: 20, horizontal: 25),
-                      height: 150,
+                      height: 200,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
-                        color: Colors.white,
+                        color: Colors.grey[700],
+                        image: DecorationImage(
+                            image: AssetImage(
+                                'assets/images/abaadee logo white.png')),
                       ),
                     ),
+                    Positioned(
+                      left: 350,
+                      top: 25,
+                      child: CircleAvatar(
+                        backgroundColor: Color(0xfffcb812),
+                        child: Icon(
+                          Icons.favorite_rounded,
+                          color: Colors.white,
+                        ),
+                      ),
+                    )
                   ],
+                ),
+                Stack(
+                  children: <Widget>[
+                    Container(
+                      margin:
+                          EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                      height: 300,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          color: Colors.white,
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.withOpacity(0.5),
+                              spreadRadius: 5,
+                              blurRadius: 7,
+                              offset: Offset(0, 3),
+                            ),
+                          ]),
+                    ),
+                    Container(
+                      margin:
+                          EdgeInsets.symmetric(vertical: 20, horizontal: 25),
+                      height: 200,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: Colors.grey[700],
+                        image: DecorationImage(
+                            image: AssetImage(
+                                'assets/images/abaadee logo white.png')),
+                      ),
+                    ),
+                    Positioned(
+                      left: 350,
+                      top: 25,
+                      child: CircleAvatar(
+                        backgroundColor: Color(0xfffcb812),
+                        child: Icon(
+                          Icons.favorite_rounded,
+                          color: Colors.white,
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                SizedBox(
+                  height: 20,
                 ),
               ],
             )

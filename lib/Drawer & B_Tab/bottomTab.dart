@@ -56,10 +56,10 @@ class _BottomTabState extends State<BottomTab> {
             textAlign: TextAlign.center),
         BottomNavyBarItem(
             icon: Icon(
-              Icons.account_circle_rounded,
+              Icons.add_circle_outline_rounded,
               color: Colors.white,
             ),
-            title: Text("Account", style: TextStyle(color: Colors.white)),
+            title: Text("Add Property", style: TextStyle(color: Colors.white)),
             activeColor: Colors.white,
             inactiveColor: inactiveColor,
             textAlign: TextAlign.center),
