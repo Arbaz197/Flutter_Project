@@ -1,3 +1,4 @@
+import 'package:abaadee/BottomTabPages/detailpage.dart';
 import 'package:abaadee/Pages/filter_page.dart';
 import 'package:abaadee/Pages/mainpage.dart';
 import 'package:flutter/material.dart';
@@ -157,7 +158,10 @@ class _PropertyState extends State<Property> {
             child: SingleChildScrollView(
               child: Column(
                 children: <Widget>[
-                  Property_Card(),
+                  GestureDetector(
+                    onTap: (){Navigator.of(context)
+            .push(MaterialPageRoute(builder: (context) => Detailpage()));},
+                    child: Property_Card()),
                   Property_Card(),
                   Property_Card(),
                   Property_Card(),
