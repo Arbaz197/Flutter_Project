@@ -2,8 +2,12 @@
 //import 'package:abaadee/homepage.dart';
 import 'package:abaadee/BottomTabPages/account_page.dart';
 import 'package:abaadee/BottomTabPages/fav_page.dart';
+import 'package:abaadee/BottomTabPages/messages.dart';
+import 'package:abaadee/BottomTabPages/settings.dart';
+import 'package:abaadee/Pages/add_property.dart';
 import 'package:abaadee/Pages/loginPage.dart';
-import 'package:abaadee/Pages/mainpage.dart';
+
+import 'package:abaadee/Pages/property.dart';
 import 'package:flutter/material.dart';
 
 class NavigationDrawer extends StatelessWidget {
@@ -97,7 +101,7 @@ class NavigationDrawer extends StatelessWidget {
     switch (i) {
       case 0:
         Navigator.of(context)
-            .push(MaterialPageRoute(builder: (context) => MainPage()));
+            .push(MaterialPageRoute(builder: (context) => Add_Property()));
         break;
       case 1:
         Navigator.of(context)
@@ -105,7 +109,7 @@ class NavigationDrawer extends StatelessWidget {
         break;
       case 2:
         Navigator.of(context)
-            .push(MaterialPageRoute(builder: (context) => MainPage()));
+            .push(MaterialPageRoute(builder: (context) => Messages()));
         break;
       case 3:
         Navigator.of(context)
@@ -113,7 +117,7 @@ class NavigationDrawer extends StatelessWidget {
         break;
       case 4:
         Navigator.of(context)
-            .push(MaterialPageRoute(builder: (context) => MainPage()));
+            .push(MaterialPageRoute(builder: (context) => Settings()));
         break;
       case 5:
         Navigator.of(context)

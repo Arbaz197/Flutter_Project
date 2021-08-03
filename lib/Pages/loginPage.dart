@@ -1,5 +1,6 @@
 import 'package:abaadee/Pages/homepage.dart';
-import 'package:abaadee/Pages/mainpage.dart';
+
+import 'package:abaadee/Pages/property.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
@@ -20,7 +21,7 @@ class LoginPage extends StatelessWidget {
             GestureDetector(
               onTap: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => MainPage()));
+                    MaterialPageRoute(builder: (context) => Property()));
               },
               child: Text(
                 "Skip",
@@ -88,10 +89,7 @@ class LoginPage extends StatelessWidget {
                     SizedBox(
                       height: 10,
                     )
-                    // SizedBox(
-                    //   height: 10,
-                    // ),
-                    // inputfile(label: "Password", obscuretext: true)
+                   
                   ],
                 ),
               ),
@@ -123,29 +121,7 @@ class LoginPage extends StatelessWidget {
               SizedBox(
                 height: 10,
               ),
-              // Padding(
-              //   padding: const EdgeInsets.fromLTRB(0, 0, 0, 60),
-              //   child: Row(
-              //       mainAxisAlignment: MainAxisAlignment.center,
-              //       children: <Widget>[
-              //         Text("Don't have an account?  "),
-              //         GestureDetector(
-              //             onTap: () {
-              //               Navigator.push(
-              //                   context,
-              //                   MaterialPageRoute(
-              //                       builder: (context) => Signup()));
-              //             },
-              //             child: Text(
-              //               "Signup",
-              //               style: TextStyle(
-              //                 fontWeight: FontWeight.w600,
-              //                 fontSize: 18,
-              //                 color: Colors.blueAccent,
-              //               ),
-              //             ))
-              //       ]),
-              // ),
+             
               SizedBox(
                 height: 10,
               ),

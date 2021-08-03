@@ -1,16 +1,29 @@
+import 'package:abaadee/Drawer%20&%20B_Tab/bottomTab.dart';
 import 'package:flutter/material.dart';
 
 class Settings extends StatefulWidget {
-  const Settings({Key? key}) : super(key: key);
-
   @override
   _SettingsState createState() => _SettingsState();
 }
 
 class _SettingsState extends State<Settings> {
+  Widget cusSearchBar = Image.asset(
+    "assets/images/abaadee-logo-black.png",
+    fit: BoxFit.fill,
+    height: 60,
+  );
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+          child: cusSearchBar,
+        ),
+        //centerTitle: true,
+        backgroundColor: Color(0xfffcb812),
+        //automaticallyImplyLeading: false,
+      ),
       backgroundColor: Colors.grey[900],
       body: Center(
         child: Padding(
@@ -180,6 +193,7 @@ class _SettingsState extends State<Settings> {
           ),
         ),
       ),
+      bottomNavigationBar: BottomTab(),
     );
   }
 }

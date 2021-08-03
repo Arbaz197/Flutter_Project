@@ -1,3 +1,4 @@
+import 'package:abaadee/Drawer%20&%20B_Tab/bottomTab.dart';
 import 'package:flutter/material.dart';
 
 class Account extends StatefulWidget {
@@ -8,10 +9,6 @@ class Account extends StatefulWidget {
 }
 
 class _AccountState extends State<Account> {
-  Icon cusIcon = Icon(
-    Icons.search,
-    color: Colors.black,
-  );
   Widget cusSearchBar = Image.asset(
     "assets/images/abaadee-logo-black.png",
     fit: BoxFit.fill,
@@ -21,6 +18,15 @@ class _AccountState extends State<Account> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+          child: cusSearchBar,
+        ),
+        //centerTitle: true,
+        backgroundColor: Color(0xfffcb812),
+        //automaticallyImplyLeading: false,
+      ),
       body: Center(
         child: SingleChildScrollView(
           child: Padding(
@@ -49,6 +55,7 @@ class _AccountState extends State<Account> {
           ),
         ),
       ),
+      bottomNavigationBar: BottomTab(),
     );
   }
 }

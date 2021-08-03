@@ -275,6 +275,7 @@ class FilterPage extends StatelessWidget {
                 SizedBox(
                   width: 300.0,
                   height: 40.0,
+                  // ignore: deprecated_member_use
                   child: RaisedButton.icon(
                     color: Color(0xfffcb812),
                     shape: RoundedRectangleBorder(

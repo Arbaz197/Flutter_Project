@@ -1,6 +1,7 @@
 import 'dart:ui';
 import 'package:abaadee/Pages/loginPage.dart';
-import 'package:abaadee/Pages/mainpage.dart';
+
+import 'package:abaadee/Pages/property.dart';
 import 'package:abaadee/Pages/signup.dart';
 import 'package:abaadee/splash_screen.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +25,7 @@ class Homepage extends StatelessWidget {
             GestureDetector(
               onTap: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => MainPage()));
+                    MaterialPageRoute(builder: (context) => Property()));
               },
               child: Text(
                 "Skip",

@@ -1,5 +1,9 @@
+import 'package:abaadee/Drawer%20&%20B_Tab/bottomTab.dart';
+import 'package:abaadee/Drawer%20&%20B_Tab/navigation_drawer.dart';
+import 'package:abaadee/Pages/add_property.dart';
 import 'package:abaadee/Pages/filter_page.dart';
-import 'package:abaadee/Pages/mainpage.dart';
+import 'package:abaadee/Pages/property_detail.dart';
+
 import 'package:flutter/material.dart';
 
 class Property extends StatefulWidget {
@@ -30,18 +34,25 @@ class _PropertyState extends State<Property> {
     );
   }
 
-  Icon cusIcon = Icon(
-    Icons.search,
-    color: Colors.black,
-  );
   Widget cusSearchBar = Image.asset(
     "assets/images/abaadee-logo-black.png",
     fit: BoxFit.fill,
     height: 60,
   );
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+          child: cusSearchBar,
+        ),
+        //centerTitle: true,
+        backgroundColor: Color(0xfffcb812),
+        //automaticallyImplyLeading: false,
+      ),
+      drawer: NavigationDrawer(),
       body: Column(
         children: [
           Container(
@@ -174,76 +185,87 @@ class _PropertyState extends State<Property> {
                 ],
               ),
             ),
-          )
+          ),
         ],
       ),
+      floatingActionButton: Padding(
+        padding: const EdgeInsets.only(bottom: 30),
+        child: FloatingActionButton(
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          onPressed: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => Add_Property()));
+          },
+          child: Container(
+            height: 70,
+            width: 70,
+            decoration: BoxDecoration(
+                border: Border.all(color: Colors.white, width: 4),
+                shape: BoxShape.circle,
+                color: Color(0xfffcb812)),
+            child: Icon(Icons.add, size: 30),
+          ),
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      bottomNavigationBar: BottomTab(),
+
+      //bottomNavigationBar: BottomTab(),
     );
   }
 }
 
+// ignore: camel_case_types
 class Property_Card extends StatelessWidget {
   const Property_Card({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: <Widget>[
-        Container(
-          margin: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-          height: 300,
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
-              color: Colors.white,
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.grey.withOpacity(0.5),
-                  spreadRadius: 5,
-                  blurRadius: 7,
-                  offset: Offset(0, 3),
-                ),
-              ]),
-        ),
-        Container(
-          margin: EdgeInsets.symmetric(vertical: 20, horizontal: 25),
-          height: 200,
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
-              color: Colors.grey[700],
-              image: DecorationImage(
-                  image: AssetImage('assets/images/abaadee logo white.png'))),
-        ),
-        Positioned(
-          left: 350,
-          top: 30,
-          child: CircleAvatar(
-            backgroundColor: Color(0xfffcb812),
-            child: Icon(
-              Icons.favorite_rounded,
-              color: Colors.white,
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => PropertyDetail()));
+      },
+      child: Stack(
+        children: <Widget>[
+          Container(
+            margin: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+            height: 300,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                color: Colors.white,
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.5),
+                    spreadRadius: 5,
+                    blurRadius: 7,
+                    offset: Offset(0, 3),
+                  ),
+                ]),
+          ),
+          Container(
+            margin: EdgeInsets.symmetric(vertical: 20, horizontal: 25),
+            height: 200,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                color: Colors.grey[700],
+                image: DecorationImage(
+                    image: AssetImage('assets/images/abaadee logo white.png'))),
+          ),
+          Positioned(
+            left: 280,
+            top: 30,
+            child: CircleAvatar(
+              backgroundColor: Color(0xfffcb812),
+              child: Icon(
+                Icons.favorite_rounded,
+                color: Colors.white,
+              ),
             ),
           ),
-        ),
-        Positioned(
-            top: 230,
-            left: 50,
-            child: Column(
-              children: [
-                Positioned(
-                  child: Text(
-                    "Hello salman gandu",
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 22,
-                        fontWeight: FontWeight.bold),
-                  ),
-                ),
-                Text(
-                  "Hello  gandu",
-                  style: TextStyle(color: Colors.black, fontSize: 18),
-                )
-              ],
-            ))
-      ],
+        ],
+      ),
     );
   }
 }

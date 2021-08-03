@@ -7,21 +7,7 @@ class Signup extends StatelessWidget {
     return Scaffold(
       resizeToAvoidBottomInset: true,
       backgroundColor: Colors.white,
-      // appBar: AppBar(
-      //   elevation: 0,
-      //   brightness: Brightness.light,
-      //   backgroundColor: Colors.white,
-      //   leading: IconButton(
-      //     onPressed: () {
-      //       Navigator.pop(context);
-      //     },
-      //     icon: Icon(
-      //       Icons.arrow_back_ios,
-      //       size: 20,
-      //       color: Colors.black,
-      //     ),
-      //   ),
-      // ),
+    
       body: SingleChildScrollView(
         child: Container(
           padding: EdgeInsets.symmetric(horizontal: 40),
