@@ -2,12 +2,11 @@
 //import 'package:abaadee/homepage.dart';
 import 'package:abaadee/BottomTabPages/account_page.dart';
 import 'package:abaadee/BottomTabPages/fav_page.dart';
-import 'package:abaadee/BottomTabPages/messages.dart';
+import 'package:abaadee/Pages/projects.dart';
 import 'package:abaadee/BottomTabPages/settings.dart';
 import 'package:abaadee/Pages/add_property.dart';
 import 'package:abaadee/Pages/loginPage.dart';
 
-import 'package:abaadee/Pages/property.dart';
 import 'package:flutter/material.dart';
 
 class NavigationDrawer extends StatelessWidget {
@@ -40,8 +39,8 @@ class NavigationDrawer extends StatelessWidget {
             ),
             SizedBox(height: 13),
             buildMenuItem(
-              text: "Message",
-              icon: Icons.message,
+              text: "Projects",
+              icon: Icons.business_rounded,
               OnClicked: () => selectedItem(context, 2),
             ),
             SizedBox(height: 13),
@@ -109,7 +108,7 @@ class NavigationDrawer extends StatelessWidget {
         break;
       case 2:
         Navigator.of(context)
-            .push(MaterialPageRoute(builder: (context) => Messages()));
+            .push(MaterialPageRoute(builder: (context) => Projects()));
         break;
       case 3:
         Navigator.of(context)

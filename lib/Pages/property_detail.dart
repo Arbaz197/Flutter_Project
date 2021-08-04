@@ -1,4 +1,5 @@
-import 'package:abaadee/Pages/property.dart';
+// ignore: import_of_legacy_library_into_null_safe
+import 'package:carousel_pro/carousel_pro.dart';
 import 'package:flutter/material.dart';
 
 class PropertyDetail extends StatelessWidget {
@@ -12,58 +13,67 @@ class PropertyDetail extends StatelessWidget {
           Stack(children: <Widget>[
             Container(
               child: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 15),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    IconButton(
-                        icon: Icon(
-                          Icons.arrow_back,
-                          color: Colors.white,
-                        ),
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => Property()));
-                        }),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 14),
-                      child: Text(
-                        "Property Details",
-                        style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white),
-                      ),
-                    ),
-                    SizedBox(
-                      width: 70,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10),
-                      child: IconButton(
-                          icon: Icon(
-                            Icons.favorite_border_outlined,
-                            color: Colors.white,
-                          ),
-                          onPressed: () {}),
-                    ),
-                    IconButton(
-                        icon: Icon(
-                          Icons.share_outlined,
-                          color: Colors.white,
-                        ),
-                        onPressed: () {})
+                padding: const EdgeInsets.symmetric(vertical: 0),
+                // child: Row(
+                //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                //   crossAxisAlignment: CrossAxisAlignment.start,
+                //   children: [
+                //     IconButton(
+                //         icon: Icon(
+                //           Icons.arrow_back,
+                //           color: Colors.black,
+                //         ),
+                //         onPressed: () {
+                //           Navigator.push(
+                //               context,
+                //               MaterialPageRoute(
+                //                   builder: (context) => Property()));
+                //         }),
+                //     Padding(
+                //       padding: const EdgeInsets.only(top: 14),
+                //       child: Text(
+                //         "Property Details",
+                //         style: TextStyle(
+                //             fontSize: 16,
+                //             fontWeight: FontWeight.bold,
+                //             color: Colors.black),
+                //       ),
+                //     ),
+                //     SizedBox(
+                //       width: 70,
+                //     ),
+                //     Padding(
+                //       padding: const EdgeInsets.symmetric(horizontal: 10),
+                //       child: IconButton(
+                //           icon: Icon(
+                //             Icons.favorite_border_outlined,
+                //             color: Colors.black,
+                //           ),
+                //           onPressed: () {}),
+                //     ),
+                //     IconButton(
+                //         icon: Icon(
+                //           Icons.share_outlined,
+                //           color: Colors.black,
+                //         ),
+                //         onPressed: () {})
+                //   ],
+                // ),
+
+                child: Carousel(
+                  images: [
+                    AssetImage("assets/images/image2.jpg"),
+                    AssetImage("assets/images/abaadee-logo-black.png"),
+                    AssetImage("assets/images/map1.jpg")
                   ],
+                  dotSize: 4.0,
+                  dotSpacing: 15.0,
+                  dotColor: Colors.white,
+                  indicatorBgPadding: 5.0,
+                  dotBgColor: Colors.grey.withOpacity(0.5),
                 ),
               ),
               height: 300,
-              decoration: BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage('assets/images/image2.jpg'),
-                      fit: BoxFit.fill)),
             ),
           ]),
           Column(children: [

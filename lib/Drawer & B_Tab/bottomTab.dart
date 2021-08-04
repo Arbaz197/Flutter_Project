@@ -1,7 +1,3 @@
-import 'package:abaadee/BottomTabPages/fav_page.dart';
-import 'package:abaadee/BottomTabPages/messages.dart';
-import 'package:abaadee/BottomTabPages/settings.dart';
-import 'package:abaadee/Pages/property.dart';
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -33,6 +29,15 @@ class _BottomTabState extends State<BottomTab> {
               textAlign: TextAlign.center),
           BottomNavyBarItem(
               icon: Icon(
+                Icons.business_rounded,
+                color: Colors.white,
+              ),
+              title: Text("Projects", style: TextStyle(color: Colors.white)),
+              activeColor: Colors.white,
+              inactiveColor: inactiveColor,
+              textAlign: TextAlign.center),
+          BottomNavyBarItem(
+              icon: Icon(
                 Icons.favorite_border,
                 color: Colors.white,
               ),
@@ -42,15 +47,6 @@ class _BottomTabState extends State<BottomTab> {
                 "Favorite",
                 style: TextStyle(color: Colors.white),
               ),
-              textAlign: TextAlign.center),
-          BottomNavyBarItem(
-              icon: Icon(
-                Icons.message,
-                color: Colors.white,
-              ),
-              title: Text("Message", style: TextStyle(color: Colors.white)),
-              activeColor: Colors.white,
-              inactiveColor: inactiveColor,
               textAlign: TextAlign.center),
           BottomNavyBarItem(
               icon: Icon(

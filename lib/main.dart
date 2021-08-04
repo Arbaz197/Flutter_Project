@@ -1,3 +1,4 @@
+// @dart=2.9
 import 'dart:ui';
 import 'package:abaadee/Pages/loginPage.dart';
 
@@ -78,10 +79,6 @@ class Homepage extends StatelessWidget {
               ),
               Container(
                 height: MediaQuery.of(context).size.height / 3,
-                // decoration: BoxDecoration(
-                //     image: DecorationImage(
-                //         image: NetworkImage(
-                //             "https://jeewagoc.com/wp-content/uploads/2021/04/black-yellow-abaadee-logo_abaadee-logo.png"))),
                 child: Image.asset(
                   "assets/images/abaadee.png",
                 ),

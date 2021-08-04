@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// ignore: camel_case_types
 class Add_Property extends StatefulWidget {
   const Add_Property({Key? key}) : super(key: key);
 
@@ -7,6 +8,7 @@ class Add_Property extends StatefulWidget {
   _Add_PropertyState createState() => _Add_PropertyState();
 }
 
+// ignore: camel_case_types
 class _Add_PropertyState extends State<Add_Property> {
   @override
   Widget build(BuildContext context) {
