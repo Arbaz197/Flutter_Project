@@ -1,6 +1,8 @@
 import 'package:abaadee/Drawer%20&%20B_Tab/bottomTab.dart';
 import 'package:abaadee/Drawer%20&%20B_Tab/navigation_drawer.dart';
+import 'package:abaadee/Pages/property_detail.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 // ignore: must_be_immutable
 class Projects extends StatefulWidget {
@@ -45,7 +47,10 @@ class ProjectList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => PropertyDetail()));
+      },
       child: Stack(
         children: <Widget>[
           Container(
@@ -63,19 +68,35 @@ class ProjectList extends StatelessWidget {
                   ),
                 ]),
           ),
-          Container(
-            margin: EdgeInsets.only(top: 15, left: 10),
-            height: 125,
-            width: 150,
-            color: Colors.green,
-            child: Image(
-              image: AssetImage("assets/images/Ise_building2.png"),
-              fit: BoxFit.fill,
-            ),
+          Stack(
+            children: <Widget>[
+              Container(
+                margin: EdgeInsets.only(top: 15, left: 10),
+                height: 125,
+                width: 150,
+                color: Colors.green,
+                child: Image(
+                  image: AssetImage("assets/images/Ise_building2.png"),
+                  fit: BoxFit.fill,
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.only(left: 10, top: 16),
+                height: 15,
+                width: 40,
+                color: Colors.redAccent,
+                child: Center(
+                  child: Text(
+                    "Hot",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+              )
+            ],
           ),
           Container(
             margin: EdgeInsets.only(top: 15, left: 165),
-            height: 125,
+            height: 145,
             width: 180,
             //color: Colors.green,
             child: Column(children: [
@@ -83,18 +104,19 @@ class ProjectList extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    "Zee Avenue                             ",
+                    "Zee Avenue",
                     style: TextStyle(color: Colors.blue),
                   ),
+                  SizedBox(width: 85.0),
                   Icon(
-                    Icons.whatshot_sharp,
+                    Icons.whatshot_outlined,
                     color: Colors.red,
-                    size: 15,
+                    size: 12,
                   ),
                   Icon(
                     Icons.verified_sharp,
                     color: Colors.green,
-                    size: 15,
+                    size: 12,
                   )
                 ],
               ),
@@ -139,70 +161,80 @@ class ProjectList extends StatelessWidget {
                 height: 15,
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 17),
+                padding: const EdgeInsets.only(top: 13),
                 child: Row(
                   children: [
-                    Container(
-                      height: 30,
-                      width: 50,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(10.0),
-                            bottomLeft: Radius.circular(10.0),
+                    GestureDetector(
+                      onTap: () {},
+                      child: Container(
+                        height: 40,
+                        width: 50,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(10.0),
+                              bottomLeft: Radius.circular(10.0),
+                            ),
+                            border: Border.all(color: Color(0xfffcb812)),
+                            color: Colors.white),
+                        child: Center(
+                          child: Text(
+                            "Email",
+                            style: TextStyle(
+                                color: Color(0xfffcb812),
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold),
                           ),
-                          border: Border.all(color: Color(0xfffcb812)),
-                          color: Colors.white),
-                      child: Center(
-                        child: Text(
-                          "Email",
-                          style: TextStyle(
-                              color: Color(0xfffcb812),
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold),
                         ),
                       ),
                     ),
                     SizedBox(
                       width: 2,
                     ),
-                    Container(
-                      height: 30,
-                      width: 50,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(0.0),
-                            bottomLeft: Radius.circular(0.0),
+                    GestureDetector(
+                      onTap: () {},
+                      child: Container(
+                        height: 40,
+                        width: 50,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(0.0),
+                              bottomLeft: Radius.circular(0.0),
+                            ),
+                            border: Border.all(color: Color(0xfffcb812)),
+                            color: Color(0xfffcb812)),
+                        child: Center(
+                          child: Text(
+                            "Call",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold),
                           ),
-                          border: Border.all(color: Color(0xfffcb812)),
-                          color: Color(0xfffcb812)),
-                      child: Center(
-                        child: Text(
-                          "Call",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold),
                         ),
                       ),
                     ),
                     SizedBox(
                       width: 2,
                     ),
-                    Container(
-                      height: 30,
-                      width: 50,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.only(
-                            topRight: Radius.circular(10.0),
-                            bottomRight: Radius.circular(10.0),
-                          ),
-                          border: Border.all(color: Color(0xfffcb812)),
-                          color: Colors.white),
-                      child: Center(
-                          child: Icon(
-                        Icons.call,
-                        color: Colors.green,
-                      )),
+                    GestureDetector(
+                      onTap: () {},
+                      child: Container(
+                        height: 40,
+                        width: 50,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.only(
+                              topRight: Radius.circular(10.0),
+                              bottomRight: Radius.circular(10.0),
+                            ),
+                            border: Border.all(color: Color(0xfffcb812)),
+                            color: Colors.white),
+                        child: IconButton(
+                            icon: FaIcon(
+                              FontAwesomeIcons.whatsapp,
+                              color: Color(0xff4FCE5D),
+                            ),
+                            onPressed: () {}),
+                      ),
                     ),
                   ],
                 ),

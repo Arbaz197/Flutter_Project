@@ -1,7 +1,8 @@
-import 'package:abaadee/Pages/homepage.dart';
+import 'package:abaadee/Pages/add_property.dart';
 
 import 'package:abaadee/Pages/property.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_signin_button/flutter_signin_button.dart';
 
 class LoginPage extends StatelessWidget {
   @override
@@ -47,16 +48,15 @@ class LoginPage extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Icon(
-                    Icons.location_pin,
-                    size: 30,
-                  )
+                  Container(
+                    child: Image.asset("assets/images/abaadee.png"),
+                    height: 40,
+                  ),
                 ],
               ),
               SizedBox(
-                height: 15,
+                height: 5,
               ),
-
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 10, vertical: 1),
                 child: Text(
@@ -69,7 +69,7 @@ class LoginPage extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 15,
+                height: 5,
               ),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 10),
@@ -88,8 +88,11 @@ class LoginPage extends StatelessWidget {
                     inputfile(label: "Email"),
                     SizedBox(
                       height: 10,
+                    ),
+                    inputfile(label: "Password", obscuretext: true),
+                    SizedBox(
+                      height: 10,
                     )
-                   
                   ],
                 ),
               ),
@@ -102,8 +105,10 @@ class LoginPage extends StatelessWidget {
                   minWidth: double.infinity,
                   height: 50,
                   onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => HomeScreen()));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => Add_Property()));
                   },
                   color: Color(0xfffcb812),
                   elevation: 0,
@@ -119,11 +124,10 @@ class LoginPage extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 10,
+                height: 5,
               ),
-             
               SizedBox(
-                height: 10,
+                height: 5,
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(
@@ -136,88 +140,22 @@ class LoginPage extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 25,
+                height: 10,
               ),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 60),
-                child: MaterialButton(
-                  minWidth: double.infinity,
-                  height: 50,
-                  onPressed: () {},
-                  color: Color(0xff3b5998),
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(3),
-                      side: BorderSide(width: 0.8)),
-                  child: Row(
-                    children: [
-                      Text(
-                        "Login with facebook",
-                        textAlign: TextAlign.left,
-                        style: TextStyle(
-                          fontSize: 18,
-                          color: Colors.white,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+              SignInButton(
+                Buttons.Facebook,
+                text: "Sign in with Facebook",
+                onPressed: () {},
               ),
-              SizedBox(
-                height: 7,
+              SignInButton(
+                Buttons.GoogleDark,
+                text: "Sign in with Google",
+                onPressed: () {},
               ),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 60),
-                child: MaterialButton(
-                  minWidth: double.infinity,
-                  height: 50,
-                  onPressed: () {},
-                  color: Color(0xff4285F4),
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(3),
-                      side: BorderSide(width: 0.8)),
-                  child: Row(
-                    children: [
-                      Text(
-                        "Login with Google",
-                        textAlign: TextAlign.left,
-                        style: TextStyle(
-                          fontSize: 18,
-                          color: Colors.white,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 7,
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 60),
-                child: MaterialButton(
-                  minWidth: double.infinity,
-                  height: 50,
-                  onPressed: () {},
-                  color: Color(0xffA2AAAD),
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(3),
-                      side: BorderSide(width: 0.8)),
-                  child: Row(
-                    children: [
-                      Text(
-                        "Login with Apple",
-                        textAlign: TextAlign.left,
-                        style: TextStyle(
-                          fontSize: 18,
-                          color: Colors.white,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+              SignInButton(
+                Buttons.AppleDark,
+                text: "Sign in with Apple",
+                onPressed: () {},
               ),
             ],
           ),

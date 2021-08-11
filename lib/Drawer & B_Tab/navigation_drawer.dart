@@ -4,7 +4,7 @@ import 'package:abaadee/BottomTabPages/account_page.dart';
 import 'package:abaadee/BottomTabPages/fav_page.dart';
 import 'package:abaadee/Pages/projects.dart';
 import 'package:abaadee/BottomTabPages/settings.dart';
-import 'package:abaadee/Pages/add_property.dart';
+
 import 'package:abaadee/Pages/loginPage.dart';
 
 import 'package:flutter/material.dart';
@@ -28,7 +28,7 @@ class NavigationDrawer extends StatelessWidget {
             SizedBox(height: 10),
             buildMenuItem(
               text: "Add Property",
-              icon: Icons.add_box_rounded,
+              icon: Icons.add_circle_outline_sharp,
               OnClicked: () => selectedItem(context, 0),
             ),
             SizedBox(height: 13),
@@ -100,7 +100,7 @@ class NavigationDrawer extends StatelessWidget {
     switch (i) {
       case 0:
         Navigator.of(context)
-            .push(MaterialPageRoute(builder: (context) => Add_Property()));
+            .push(MaterialPageRoute(builder: (context) => LoginPage()));
         break;
       case 1:
         Navigator.of(context)

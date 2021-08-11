@@ -1,77 +1,51 @@
 // ignore: import_of_legacy_library_into_null_safe
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:flutter/material.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-class PropertyDetail extends StatelessWidget {
-  const PropertyDetail({Key? key}) : super(key: key);
+class PropertyDetail extends StatefulWidget {
+  @override
+  _PropertyDetailState createState() => _PropertyDetailState();
+}
 
+class _PropertyDetailState extends State<PropertyDetail> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          "Property Details",
+          style: TextStyle(color: Colors.white),
+        ),
+        actions: [
+          IconButton(
+              icon: Icon(Icons.favorite_border_outlined), onPressed: () {}),
+          IconButton(icon: Icon(Icons.share_rounded), onPressed: () {}),
+        ],
+        backgroundColor: Colors.transparent,
+        elevation: 0.0,
+      ),
+      extendBodyBehindAppBar: true,
       body: SingleChildScrollView(
         child: Column(children: [
           Stack(children: <Widget>[
             Container(
               child: Padding(
                 padding: const EdgeInsets.symmetric(vertical: 0),
-                // child: Row(
-                //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                //   crossAxisAlignment: CrossAxisAlignment.start,
-                //   children: [
-                //     IconButton(
-                //         icon: Icon(
-                //           Icons.arrow_back,
-                //           color: Colors.black,
-                //         ),
-                //         onPressed: () {
-                //           Navigator.push(
-                //               context,
-                //               MaterialPageRoute(
-                //                   builder: (context) => Property()));
-                //         }),
-                //     Padding(
-                //       padding: const EdgeInsets.only(top: 14),
-                //       child: Text(
-                //         "Property Details",
-                //         style: TextStyle(
-                //             fontSize: 16,
-                //             fontWeight: FontWeight.bold,
-                //             color: Colors.black),
-                //       ),
-                //     ),
-                //     SizedBox(
-                //       width: 70,
-                //     ),
-                //     Padding(
-                //       padding: const EdgeInsets.symmetric(horizontal: 10),
-                //       child: IconButton(
-                //           icon: Icon(
-                //             Icons.favorite_border_outlined,
-                //             color: Colors.black,
-                //           ),
-                //           onPressed: () {}),
-                //     ),
-                //     IconButton(
-                //         icon: Icon(
-                //           Icons.share_outlined,
-                //           color: Colors.black,
-                //         ),
-                //         onPressed: () {})
-                //   ],
-                // ),
-
-                child: Carousel(
-                  images: [
-                    AssetImage("assets/images/image2.jpg"),
-                    AssetImage("assets/images/abaadee-logo-black.png"),
-                    AssetImage("assets/images/map1.jpg")
-                  ],
-                  dotSize: 4.0,
-                  dotSpacing: 15.0,
-                  dotColor: Colors.white,
-                  indicatorBgPadding: 5.0,
-                  dotBgColor: Colors.grey.withOpacity(0.5),
-                ),
+                child: Stack(children: <Widget>[
+                  Carousel(
+                    images: [
+                      AssetImage("assets/images/image2.jpg"),
+                      AssetImage("assets/images/abaadee-logo-black.png"),
+                      AssetImage("assets/images/map1.jpg")
+                    ],
+                    dotSize: 4.0,
+                    dotSpacing: 15.0,
+                    dotColor: Colors.white,
+                    indicatorBgPadding: 5.0,
+                    dotBgColor: Colors.grey.withOpacity(0.5),
+                  ),
+                ]),
               ),
               height: 300,
             ),
@@ -307,12 +281,7 @@ class PropertyDetail extends StatelessWidget {
             ),
             Container(
               height: 50,
-              //width: 400,
-              decoration: BoxDecoration(
-                  // border: Border(
-                  //   bottom: BorderSide(width: 0.5, color: Colors.black45),
-                  // ),
-                  color: Color(0xffC0C0C0)),
+              decoration: BoxDecoration(color: Color(0xffC0C0C0)),
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 35),
                 child: Row(
@@ -357,7 +326,6 @@ class PropertyDetail extends StatelessWidget {
               ),
             ),
             Container(
-              // width: 400,
               decoration: BoxDecoration(
                   border: Border(
                     bottom: BorderSide(width: 0.5, color: Colors.black45),
@@ -475,9 +443,15 @@ class PropertyDetail extends StatelessWidget {
 }
 
 // ignore: camel_case_types
-class Description_Text extends StatelessWidget {
+class Description_Text extends StatefulWidget {
   const Description_Text({Key? key}) : super(key: key);
 
+  @override
+  _Description_TextState createState() => _Description_TextState();
+}
+
+// ignore: camel_case_types
+class _Description_TextState extends State<Description_Text> {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -521,9 +495,15 @@ class Description_Text extends StatelessWidget {
 }
 
 // ignore: camel_case_types
-class Amenities_Detail extends StatelessWidget {
+class Amenities_Detail extends StatefulWidget {
   const Amenities_Detail({Key? key}) : super(key: key);
 
+  @override
+  _Amenities_DetailState createState() => _Amenities_DetailState();
+}
+
+// ignore: camel_case_types
+class _Amenities_DetailState extends State<Amenities_Detail> {
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -554,9 +534,15 @@ class Amenities_Detail extends StatelessWidget {
 }
 
 // ignore: camel_case_types
-class Features_Detail extends StatelessWidget {
+class Features_Detail extends StatefulWidget {
   const Features_Detail({Key? key}) : super(key: key);
 
+  @override
+  _Features_DetailState createState() => _Features_DetailState();
+}
+
+// ignore: camel_case_types
+class _Features_DetailState extends State<Features_Detail> {
   @override
   Widget build(BuildContext context) {
     return
@@ -649,8 +635,27 @@ class Features_Detail extends StatelessWidget {
 }
 
 // ignore: camel_case_types
-class Location_Detail extends StatelessWidget {
+class Location_Detail extends StatefulWidget {
   const Location_Detail({Key? key}) : super(key: key);
+
+  @override
+  _Location_DetailState createState() => _Location_DetailState();
+}
+
+// ignore: camel_case_types
+class _Location_DetailState extends State<Location_Detail> {
+  Set<Marker> _marker = {};
+
+  void _onMapCreated(GoogleMapController controller) {
+    setState(() {
+      _marker.add(
+        Marker(
+            markerId: MarkerId('ID-1'),
+            infoWindow: InfoWindow(title: 'Jeewa Group'),
+            position: LatLng(24.91159552705656, 67.08775106805638)),
+      );
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -686,12 +691,18 @@ class Location_Detail extends StatelessWidget {
           ),
           Container(
             height: 300,
-            decoration: BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage(
-                      'assets/images/map1.jpg',
-                    ),
-                    fit: BoxFit.fill)),
+            // decoration: BoxDecoration(
+            // image: DecorationImage(
+            //     image: AssetImage(
+            //       'assets/images/map1.jpg',
+            //     ),
+            //     fit: BoxFit.fill)),
+            child: GoogleMap(
+                onMapCreated: _onMapCreated,
+                markers: _marker,
+                initialCameraPosition: CameraPosition(
+                    target: LatLng(24.911128456799137, 67.0891994608298),
+                    zoom: 15)),
           ),
         ],
       ),

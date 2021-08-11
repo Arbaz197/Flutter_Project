@@ -8,7 +8,10 @@ import 'package:abaadee/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MaterialApp(debugShowCheckedModeBanner: false, home: SplashScreen()));
+  runApp(MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Abaadee.com',
+      home: SplashScreen()));
 }
 
 class Homepage extends StatelessWidget {
@@ -24,18 +27,21 @@ class Homepage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
             GestureDetector(
-              onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => Property()));
-              },
-              child: Text(
-                "Skip",
-                style: TextStyle(
-                  color: Colors.grey,
-                  fontSize: 16,
-                ),
-              ),
-            ),
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Property()));
+                },
+                child: Container(
+                  width: 40,
+                  height: 20,
+                  child: Text(
+                    "Skip",
+                    style: TextStyle(
+                      color: Colors.grey,
+                      fontSize: 16,
+                    ),
+                  ),
+                )),
           ],
         ),
       ),

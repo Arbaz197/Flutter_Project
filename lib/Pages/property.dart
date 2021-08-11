@@ -1,6 +1,5 @@
 import 'package:abaadee/Drawer%20&%20B_Tab/bottomTab.dart';
 import 'package:abaadee/Drawer%20&%20B_Tab/navigation_drawer.dart';
-import 'package:abaadee/Pages/add_property.dart';
 
 import 'package:abaadee/Pages/filter_page.dart';
 import 'package:abaadee/Pages/property_detail.dart';
@@ -13,28 +12,6 @@ class Property extends StatefulWidget {
 }
 
 class _PropertyState extends State<Property> {
-  // ignore: non_constant_identifier_names
-  Container MyArticle(String imageurl, String heading) {
-    return Container(
-      height: 140,
-      width: 200,
-      child: Card(
-        child: Wrap(
-          children: <Widget>[
-            Image.network(imageurl),
-            ListTile(
-              title: Center(
-                  child: Text(
-                heading,
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
-              )),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
   Widget cusSearchBar = Image.asset(
     "assets/images/abaadee-logo-black.png",
     fit: BoxFit.fill,
@@ -56,32 +33,51 @@ class _PropertyState extends State<Property> {
       drawer: NavigationDrawer(),
       body: Column(
         children: [
-          Container(
-            padding: EdgeInsets.symmetric(vertical: 20, horizontal: 10),
-            child: TextField(
-              decoration: InputDecoration(
-                fillColor: Colors.white,
-                filled: true,
-                prefixIcon: Icon(
-                  Icons.search,
-                  color: Colors.grey,
-                ),
-                hintText: 'Search Property...',
-                suffixIcon: IconButton(
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => FilterPage()));
-                  },
-                  icon: Icon(
-                    Icons.filter_list_sharp,
-                    color: Color(0xfffcb812),
-                    size: 35,
+          Padding(
+            padding: const EdgeInsets.only(top: 20, left: 20, right: 20),
+            child: Container(
+              height: 51,
+              child: Row(
+                children: <Widget>[
+                  Expanded(
+                    child: TextField(
+                      decoration: InputDecoration(
+                        prefixIcon: Icon(Icons.search),
+                        hintText: "Search Property...",
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(15.0),
+                            borderSide: BorderSide.none),
+                        fillColor: Color(0xffe6e6ec),
+                        filled: true,
+                      ),
+                    ),
                   ),
-                ),
+                  SizedBox(width: 5),
+                  Container(
+                    decoration: BoxDecoration(
+                      color: Color(0xffe6e6ec),
+                      borderRadius: BorderRadius.circular(9.0),
+                    ),
+                    child: IconButton(
+                      icon: Icon(
+                        Icons.tune,
+                        color: Color(0xfffcb812),
+                      ),
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => FilterPage()));
+                      },
+                    ),
+                  ),
+                ],
               ),
             ),
           ),
-          SizedBox(),
+          SizedBox(
+            height: 10,
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -189,30 +185,7 @@ class _PropertyState extends State<Property> {
           ),
         ],
       ),
-      floatingActionButton: Padding(
-        padding: const EdgeInsets.only(bottom: 30),
-        child: FloatingActionButton(
-          backgroundColor: Colors.transparent,
-          elevation: 0,
-          onPressed: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => Add_Property()));
-          },
-          child: Container(
-            height: 70,
-            width: 70,
-            decoration: BoxDecoration(
-                border: Border.all(color: Colors.white, width: 4),
-                shape: BoxShape.circle,
-                color: Color(0xfffcb812)),
-            child: Icon(Icons.add, size: 30),
-          ),
-        ),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomTab(),
-
-      //bottomNavigationBar: BottomTab(),
     );
   }
 }
@@ -245,26 +218,40 @@ class Property_Card extends StatelessWidget {
                   ),
                 ]),
           ),
-          Container(
-            margin: EdgeInsets.symmetric(vertical: 20, horizontal: 25),
-            height: 200,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                color: Colors.grey[700],
-                image: DecorationImage(
-                    image: AssetImage('assets/images/abaadee logo white.png'))),
-          ),
-          Positioned(
-            left: 280,
-            top: 30,
-            child: CircleAvatar(
-              backgroundColor: Color(0xfffcb812),
-              child: Icon(
-                Icons.favorite_rounded,
-                color: Colors.white,
+          Stack(children: <Widget>[
+            Container(
+              margin: EdgeInsets.symmetric(vertical: 20, horizontal: 25),
+              height: 200,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  color: Colors.grey[700],
+                  image: DecorationImage(
+                      image:
+                          AssetImage('assets/images/abaadee logo white.png'))),
+            ),
+            Positioned(
+              left: 280,
+              top: 30,
+              child: CircleAvatar(
+                backgroundColor: Color(0xfffcb812),
+                child: GestureDetector(
+                  onTap: (){
+
+                  },
+                  child: Icon(
+                    Icons.favorite_rounded,
+                    color: Colors.white,
+                  ),
+                ),
               ),
             ),
-          ),
+          ]),
+          Padding(
+            padding: const EdgeInsets.only(top: 230, left: 30),
+            child: Column(
+              children: [Text("data")],
+            ),
+          )
         ],
       ),
     );

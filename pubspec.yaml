@@ -35,6 +35,10 @@ dependencies:
   bottom_navy_bar: ^6.0.0
   flutter_signin_button: ^2.0.0
   carousel_pro: ^1.0.0
+  font_awesome_flutter: ^9.1.0
+  google_maps_flutter: ^2.0.6
+  geolocator: ^7.4.0
+  
 
 dev_dependencies:
   flutter_test:

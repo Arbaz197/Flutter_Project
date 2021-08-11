@@ -38,7 +38,19 @@ class _BottomTabState extends State<BottomTab> {
               textAlign: TextAlign.center),
           BottomNavyBarItem(
               icon: Icon(
-                Icons.favorite_border,
+                Icons.add_circle_outline_sharp,
+                color: Colors.white,
+              ),
+              activeColor: Colors.white,
+              inactiveColor: inactiveColor,
+              title: Text(
+                "Add Property",
+                style: TextStyle(color: Colors.white),
+              ),
+              textAlign: TextAlign.center),
+          BottomNavyBarItem(
+              icon: Icon(
+                Icons.favorite_border_rounded,
                 color: Colors.white,
               ),
               activeColor: Colors.white,

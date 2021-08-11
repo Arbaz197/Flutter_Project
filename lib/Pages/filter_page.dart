@@ -15,57 +15,66 @@ class FilterPage extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Container(
-                    height: 50,
-                    width: 100,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: Color(0xfffcb812)),
-                    child: Center(
-                      child: Text(
-                        "BUY",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold),
+                  GestureDetector(
+                    onTap: () {},
+                    child: Container(
+                      height: 50,
+                      width: 100,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: Color(0xfffcb812)),
+                      child: Center(
+                        child: Text(
+                          "BUY",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold),
+                        ),
                       ),
                     ),
                   ),
                   SizedBox(
                     width: 5,
                   ),
-                  Container(
-                    height: 50,
-                    width: 100,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: Color(0xfffcb812)),
-                    child: Center(
-                      child: Text(
-                        "RENT",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold),
+                  GestureDetector(
+                    onTap: () {},
+                    child: Container(
+                      height: 50,
+                      width: 100,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: Color(0xfffcb812)),
+                      child: Center(
+                        child: Text(
+                          "RENT",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold),
+                        ),
                       ),
                     ),
                   ),
                   SizedBox(
                     width: 5,
                   ),
-                  Container(
-                    height: 50,
-                    width: 100,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: Color(0xfffcb812)),
-                    child: Center(
-                      child: Text(
-                        "INVEST",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold),
+                  GestureDetector(
+                    onTap: () {},
+                    child: Container(
+                      height: 50,
+                      width: 100,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: Color(0xfffcb812)),
+                      child: Center(
+                        child: Text(
+                          "INVEST",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold),
+                        ),
                       ),
                     ),
                   ),
@@ -195,7 +204,8 @@ class FilterPage extends StatelessWidget {
                     // fillColor: Colors.white,
                     filled: true,
 
-                    hintText: '0               to                Any',
+                    hintText: '0 to Any',
+                    hintStyle: TextStyle(wordSpacing: 110),
                     suffixIcon: IconButton(
                       onPressed: () {},
                       icon: Icon(
@@ -228,6 +238,7 @@ class FilterPage extends StatelessWidget {
                     //fillColor: Colors.white,
                     filled: true,
                     hintText: '0 to Any',
+                    hintStyle: TextStyle(wordSpacing: 110),
                     suffixIcon: IconButton(
                       onPressed: () {},
                       icon: Icon(
